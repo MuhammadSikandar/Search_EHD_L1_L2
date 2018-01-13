@@ -70,12 +70,30 @@ EHD_vector3 = np.append(neighbor2,neighbor3)
 EHD_vector4 = np.append(neighbor4,neighbor5)
 EHD_vector5 = np.append(global_des,[])
 EHD_vector = np.concatenate((EHD_vector1,EHD_vector2,EHD_vector3,EHD_vector4,EHD_vector5))#,neighbor1,neighbor2,neighbor3,neighbor4,global_des
-print EHD_vector
+EHD_vector_list =list(EHD_vector)
+print (EHD_vector_list)
 
 EHD_matrix = EHD_vector.reshape(30,5)
 print EHD_matrix
 
 
 print "writing in text file"
+text_file_vector = open("C:/Users/musi0010/Desktop/jobs/zedge_task/mirflickr/meta/features/EHD_vector.txt","w")
+text_file_vector.write("1,")
+delimitar_list =','.join(map(str,EHD_vector_list))
+text_file_vector.write(delimitar_list)
+text_file_vector.write("\n")
+text_file_vector.close()
 
-text_file = open("C:\Users\musi0010\Desktop\jobs\zedge_task\mirflickr\meta\features\EHD_vector.txt","w")
+#np.savetxt('C:/Users/musi0010/Desktop/jobs/zedge_task/mirflickr/meta/features/EHD_vector.txt', EHD_vector_list, fmt ='%0.3f',)
+#np.savetxt('C:/Users/musi0010/Desktop/jobs/zedge_task/mirflickr/meta/features/EHD_matrix.txt', EHD_matrix, fmt ='%0.3f')
+
+#text_file_matrix = open("C:/Users/musi0010/Desktop/jobs/zedge_task/mirflickr/meta/features/EHD_matrix.txt","w")
+#text_file_vector.write("1,  ")
+#text_file_matrix.write("1  ")
+#s1 =','.join(map(str,EHD_vector_list))
+#text_file_vector.write(s1)
+#text_file_vector.write("\n")
+#text_file_matrix.write(EHD_matrix)
+#text_file_matrix.write("\n")
+#text_file_vector.close()
